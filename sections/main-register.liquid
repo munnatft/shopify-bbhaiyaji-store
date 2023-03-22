@@ -1,4 +1,6 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'login.css' | asset_url | stylesheet_tag }}
+{{ 'register.js' | asset_url | script_tag   }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -26,7 +28,7 @@
   <h1>
     {{ 'customer.register.title' | t }}
   </h1>
-  {%- form 'create_customer', novalidate: 'novalidate' -%}
+  {%- form 'create_customer', class:'form', onsubmit:'return validateForm()' -%}
     {%- if form.errors -%}
       <h2 class="form__message" tabindex="-1" autofocus>
         <svg aria-hidden="true" focusable="false">
@@ -49,37 +51,44 @@
         {%- endfor -%}
       </ul>
     {%- endif -%}
-    <div class="field">
+    <div class="form-control">
       <input
         type="text"
         name="customer[first_name]"
+        aria-required="true"
         id="RegisterForm-FirstName"
         {% if form.first_name %}
           value="{{ form.first_name }}"
         {% endif %}
         autocomplete="given-name"
         placeholder="{{ 'customer.register.first_name' | t }}"
+        class="input"
       >
       <label for="RegisterForm-FirstName">
         {{ 'customer.register.first_name' | t }}
       </label>
+      {% if form.errors contains 'first_name' %}
+        <p>{{ form.errors.first_name   }}</p>
+      {% endif %}
     </div>
-    <div class="field">
+    <div class="form-control">
       <input
         type="text"
         name="customer[last_name]"
         id="RegisterForm-LastName"
+        aria-required="true"
         {% if form.last_name %}
           value="{{ form.last_name }}"
         {% endif %}
         autocomplete="family-name"
         placeholder="{{ 'customer.register.last_name' | t }}"
+        class="input"
       >
       <label for="RegisterForm-LastName">
         {{ 'customer.register.last_name' | t }}
       </label>
     </div>
-    <div class="field">
+    <div class="form-control">
       <input
         type="email"
         name="customer[email]"
@@ -96,6 +105,7 @@
           aria-describedby="RegisterForm-email-error"
         {% endif %}
         placeholder="{{ 'customer.register.email' | t }}"
+        class="input"
       >
       <label for="RegisterForm-email">
         {{ 'customer.register.email' | t }}
@@ -110,7 +120,7 @@
         {{ form.errors.messages.email }}.
       </span>
     {%- endif -%}
-    <div class="field">
+    <div class="form-control">
       <input
         type="password"
         name="customer[password]"
@@ -121,6 +131,7 @@
           aria-describedby="RegisterForm-password-error"
         {% endif %}
         placeholder="{{ 'customer.register.password' | t }}"
+        class="input"
       >
       <label for="RegisterForm-password">
         {{ 'customer.register.password' | t }}
@@ -135,11 +146,17 @@
         {{ form.errors.messages.password }}.
       </span>
     {%- endif -%}
-    <button>
+    <button type="submit">
       {{ 'customer.register.submit' | t }}
     </button>
   {%- endform -%}
 </div>
+{% javascript %}
+  function validateForm(e) {
+    e.preventDefault()
+    console.log(e)
+  }
+{% endjavascript %}
 
 {% schema %}
 {

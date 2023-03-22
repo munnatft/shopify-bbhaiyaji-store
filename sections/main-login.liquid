@@ -1,4 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'login.css' | asset_url | stylesheet_tag   }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -81,7 +82,7 @@
         {{ 'customer.recover_password.success' | t }}
       </h3>
     {%- endif -%}
-    {%- form 'customer_login', novalidate: 'novalidate' -%}
+    {%- form 'customer_login', class:'form' -%}
       {%- if form.errors -%}
         <h2 class="form__message" tabindex="-1" autofocus>
           <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
@@ -96,7 +97,7 @@
         {{ form.errors | default_errors }}
       {%- endif -%}
 
-      <div class="field">
+      <div class="form-control">
         <input
           type="email"
           name="customer[email]"
@@ -108,34 +109,33 @@
             aria-invalid="true"
           {% endif %}
           placeholder="{{ 'customer.login_page.email' | t }}"
+          class="input"
         >
         <label for="CustomerEmail">
           {{ 'customer.login_page.email' | t }}
         </label>
       </div>
+      <div class="form-control">
+        <input
+          type="password"
+          value=""
+          name="customer[password]"
+          id="CustomerPassword"
+          autocomplete="current-password"
+          {% if form.errors contains 'form' %}
+            aria-invalid="true"
+          {% endif %}
+          placeholder="{{ 'customer.login_page.password' | t }}"
+          class="input"
+        >
+        <label for="CustomerPassword">
+          {{ 'customer.login_page.password' | t }}
+        </label>
+      </div>
 
-      {%- if form.password_needed -%}
-        <div class="field">
-          <input
-            type="password"
-            value=""
-            name="customer[password]"
-            id="CustomerPassword"
-            autocomplete="current-password"
-            {% if form.errors contains 'form' %}
-              aria-invalid="true"
-            {% endif %}
-            placeholder="{{ 'customer.login_page.password' | t }}"
-          >
-          <label for="CustomerPassword">
-            {{ 'customer.login_page.password' | t }}
-          </label>
-        </div>
-
-        <a href="#recover">
-          {{ 'customer.login_page.forgot_password' | t }}
-        </a>
-      {%- endif -%}
+      <a href="#recover">
+        {{ 'customer.login_page.forgot_password' | t }}
+      </a>
 
       <button>
         {{ 'customer.login_page.sign_in' | t }}

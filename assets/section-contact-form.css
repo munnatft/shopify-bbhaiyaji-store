@@ -24,6 +24,11 @@
   margin-top: 3rem;
 }
 
+.send__button {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
 @media screen and (min-width: 750px) {
   .contact__button {
     margin-top: 4rem;
