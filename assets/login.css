@@ -27,3 +27,17 @@
     outline: none;
     box-shadow: none;
 }
+.form__message--container {
+    padding: 1rem 2rem;
+    border: 1px solid #d20000;
+    border-radius: 0.4rem;
+}
+.errors ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+.errors ul li {
+    color: #d20000;
+    text-align: center;
+}
