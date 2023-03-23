@@ -5,19 +5,25 @@
 
 .grid-collection-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   list-style: none;
   padding-left: 0;
 }
 
-.grid--item {
-  grid-column: auto/span 1;
-  grid-row: auto/span 1;
+@media screen and (min-width: 576px) {
+  .grid__item__1 {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+  .grid__item__1 .card-wrapper {
+    aspect-ratio: 1 / 1.287;
+  }
 }
 
-.grid__item__1,.grid__item__2 {
-  grid-column: auto/span 2;
+.grid__item__1 .card-wrapper .card__content{
+  display: flex;
+  align-items: center;
 }
 
 .collection-list-title {
