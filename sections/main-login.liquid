@@ -118,6 +118,7 @@
       {%- endif -%}
 
       <div class="form-control">
+        <p id="email-error" class="emailError">Invalid Email Id</p>
         <input
           type="email"
           name="customer[email]"
@@ -131,6 +132,7 @@
         </label>
       </div>
       <div class="form-control">
+        <p id="password-error" class="passwordError">Invalid Password</p>
         <input
           type="password"
           value=""
@@ -170,7 +172,7 @@
     </div>
   {%- endif -%}
 </div>
-
+<script src="{{ 'login.js' | asset_url   }}" defer="defer" />
 {% schema %}
   {
     "name": "t:sections.main-login.name",

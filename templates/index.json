@@ -30,6 +30,21 @@
         "padding_bottom": 40
       }
     },
+    "5f969c4c-5c7e-4969-b296-8306e1c43bb0": {
+      "type": "carousel-slider",
+      "blocks": {
+        "23b2b393-32f9-4260-b0fd-a95000e2db32": {
+          "type": "carousel-slider",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "23b2b393-32f9-4260-b0fd-a95000e2db32"
+      ],
+      "settings": {
+      }
+    },
     "212dcf6f-fbd1-4132-8d75-3d80a6089208": {
       "type": "collection-list",
       "blocks": {
@@ -121,6 +136,7 @@
   },
   "order": [
     "rich_text",
+    "5f969c4c-5c7e-4969-b296-8306e1c43bb0",
     "212dcf6f-fbd1-4132-8d75-3d80a6089208",
     "featured-collection"
   ]

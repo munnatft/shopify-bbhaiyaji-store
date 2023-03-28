@@ -1,0 +1,82 @@
+{{ 'carousel.css' | asset_url | stylesheet_tag }}
+
+<div class="carousel">
+  <button id="previous-button" class="carousel__button prev__btn is-hidden"></button>
+  <button id="next-button" class="carousel__button next__btn"></button>
+  <div class="carousel__track__container">
+    <ul id="carousel-track" class="carousel__track">
+      <li id="slide" class="carousel__slide current-slide">
+        <img
+          src="https://images.unsplash.com/photo-1560707303-4e980ce876ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+          alt=""
+          class="carousel_image" />
+      </li>
+      <li id="slide" class="carousel__slide">
+        <img
+          src="https://images.unsplash.com/photo-1615232934320-87b37b0ff5ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
+          alt=""
+          class="carousel_image" />
+      </li>
+      <li id="slide" class="carousel__slide">
+        <img
+          src="https://images.unsplash.com/photo-1490109875367-0dbd3c96fa1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHNvdXJjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          alt=""
+          class="carousel_image" />
+      </li>
+      <li id="slide" class="carousel__slide">
+        <img
+          src="https://images.unsplash.com/photo-1620553967922-f3ca60bbc1ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHNvdXJjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          alt=""
+          class="carousel_image" />
+      </li>
+      <li id="slide" class="carousel__slide">
+        <img
+          src="https://images.unsplash.com/photo-1502307444187-44d62a6a80af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fHNvdXJjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          alt=""
+          class="carousel_image" />
+      </li>
+      <li id="slide" class="carousel__slide">
+        <img
+          src="https://images.unsplash.com/photo-1486395130845-ec128138002e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fHNvdXJjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          alt=""
+          class="carousel_image" />
+      </li>
+    </ul>
+  </div>
+  <div id="carousel-dots" class="carousel__dots">
+    <button class="dot__navigator current-slide"></button>
+    <button class="dot__navigator"></button>
+    <button class="dot__navigator"></button>
+    <button class="dot__navigator"></button>
+    <button class="dot__navigator"></button>
+    <button class="dot__navigator"></button>
+  </div>
+</div>
+<script src="{{'carousel.js' | asset_url}}" defer />
+
+{% schema %}
+  {
+    "name": "Carousel Slider",
+    "tag": "section",
+    "class": "section",
+    "max_blocks": 9,
+    "blocks": [
+      {
+        "type": "carousel-slider",
+        "name": "Image Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image Slide"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Carousel Section"
+      }
+    ]
+  }
+{% endschema %}

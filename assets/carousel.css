@@ -1,0 +1,82 @@
+.carousel {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .carousel__button {
+    border: 2px solid #fff;
+    width: 12px;
+    height: 14px;
+    outline-color: transparent;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    z-index: 99;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+  
+  .prev__btn {
+    rotate: 45deg;
+    border-top: 0;
+    border-right: 0;
+    left: 2%;
+  }
+  
+  .next__btn {
+    rotate: 45deg;
+    border-bottom: 0;
+    border-left: 0;
+    right: 3%;
+  }
+  .carousel__track__container {
+    background-color: lightgreen;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  .carousel__track {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+  }
+  .carousel__slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .carousel_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .carousel__dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .dot__navigator {
+    outline-color: transparent;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
+  }
+  .dot__navigator.current-slide {
+    background-color: #fff;
+  }
+  .is-hidden {
+    display: none;
+  }
+  

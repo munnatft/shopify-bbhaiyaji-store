@@ -41,3 +41,19 @@
     color: #d20000;
     text-align: center;
 }
+
+.error {
+    margin: 0 !important;
+    text-align: start;
+    color: #d20000;
+    font-size: 1.5rem;
+    display: block !important;
+}
+
+.emailError {
+    display: none;
+}
+
+.passwordError {
+    display: none;
+}
