@@ -34,14 +34,14 @@ const updateDotsNavigator = (currentDot,targetDot) => {
 
 const showOrHideArrowButton = (targetIndex) => {
     if(targetIndex === 0) {
-        prevBtn.classList.add("hidden")
-        nextBtn.classList.remove("hidden")
+        prevBtn.classList.add("is-hidden")
+        nextBtn.classList.remove("is-hidden")
     } else if(targetIndex === slides.length -1) {
-        prevBtn.classList.remove("hidden")
-        nextBtn.classList.add("hidden")
+        prevBtn.classList.remove("is-hidden")
+        nextBtn.classList.add("is-hidden")
     } else {
-        prevBtn.classList.remove("hidden")
-        nextBtn.classList.remove("hidden")
+        prevBtn.classList.remove("is-hidden")
+        nextBtn.classList.remove("is-hidden")
     }
 }
 

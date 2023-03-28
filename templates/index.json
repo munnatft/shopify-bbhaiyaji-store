@@ -30,21 +30,6 @@
         "padding_bottom": 40
       }
     },
-    "5f969c4c-5c7e-4969-b296-8306e1c43bb0": {
-      "type": "carousel-slider",
-      "blocks": {
-        "23b2b393-32f9-4260-b0fd-a95000e2db32": {
-          "type": "carousel-slider",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "23b2b393-32f9-4260-b0fd-a95000e2db32"
-      ],
-      "settings": {
-      }
-    },
     "212dcf6f-fbd1-4132-8d75-3d80a6089208": {
       "type": "collection-list",
       "blocks": {
@@ -132,12 +117,49 @@
         "padding_top": 0,
         "padding_bottom": 68
       }
+    },
+    "5f969c4c-5c7e-4969-b296-8306e1c43bb0": {
+      "type": "carousel-slider",
+      "blocks": {
+        "23b2b393-32f9-4260-b0fd-a95000e2db32": {
+          "type": "carousel-slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aisvri-BARfQGE_QcU-unsplash.jpg"
+          }
+        },
+        "203a761c-4d1d-43ea-8328-db73938be5e5": {
+          "type": "carousel-slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/marek-piwnicki-oFu9stx-M9I-unsplash.jpg"
+          }
+        },
+        "b123c413-25a7-4a66-9cd4-e55c47edc704": {
+          "type": "carousel-slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aisvri-iyHY_njb6Jg-unsplash.jpg"
+          }
+        },
+        "21b3ff02-2820-413e-b398-4fa66778c60a": {
+          "type": "carousel-slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aisvri-Wq1vVLE6xMs-unsplash.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "23b2b393-32f9-4260-b0fd-a95000e2db32",
+        "203a761c-4d1d-43ea-8328-db73938be5e5",
+        "b123c413-25a7-4a66-9cd4-e55c47edc704",
+        "21b3ff02-2820-413e-b398-4fa66778c60a"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "rich_text",
-    "5f969c4c-5c7e-4969-b296-8306e1c43bb0",
     "212dcf6f-fbd1-4132-8d75-3d80a6089208",
-    "featured-collection"
+    "featured-collection",
+    "5f969c4c-5c7e-4969-b296-8306e1c43bb0"
   ]
 }

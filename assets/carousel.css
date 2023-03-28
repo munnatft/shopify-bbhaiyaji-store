@@ -31,7 +31,7 @@
     right: 3%;
   }
   .carousel__track__container {
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
     position: relative;
     height: 100%;
     overflow: hidden;
@@ -78,5 +78,8 @@
   }
   .is-hidden {
     display: none;
+  }
+  .carousel-section {
+    margin: 2rem 0;
   }
   
