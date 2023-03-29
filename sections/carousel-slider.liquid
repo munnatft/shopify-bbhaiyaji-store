@@ -4,6 +4,8 @@
   .color {
     border-color: {{ section.settings.border_color}}
     ;
+  }
+  .dot__navigator.current-slide {
     background-color: {{ section.settings.background_color}}
     ;
   }
@@ -24,7 +26,7 @@
           <li id="slide" class="carousel__slide{% if forloop.index0 == 0 %} current-slide {%endif%}">
             <img
               src="{% if slide.image == blank %} https://images.unsplash.com/photo-1560707303-4e980ce876ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80 {% else %}{{slide.image | image_url }}  {% endif %}"
-              alt=""
+              alt="{{slide.alt_text}}"
               class="carousel_image" />
           </li>
         {% endfor %}

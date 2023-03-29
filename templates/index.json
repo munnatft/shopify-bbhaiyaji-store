@@ -124,25 +124,29 @@
         "23b2b393-32f9-4260-b0fd-a95000e2db32": {
           "type": "carousel-slider",
           "settings": {
-            "image": "shopify:\/\/shop_images\/aisvri-BARfQGE_QcU-unsplash.jpg"
+            "image": "shopify:\/\/shop_images\/aisvri-BARfQGE_QcU-unsplash.jpg",
+            "alt_text": "first slide"
           }
         },
         "203a761c-4d1d-43ea-8328-db73938be5e5": {
           "type": "carousel-slider",
           "settings": {
-            "image": "shopify:\/\/shop_images\/marek-piwnicki-oFu9stx-M9I-unsplash.jpg"
+            "image": "shopify:\/\/shop_images\/marek-piwnicki-oFu9stx-M9I-unsplash.jpg",
+            "alt_text": "image for slide"
           }
         },
         "b123c413-25a7-4a66-9cd4-e55c47edc704": {
           "type": "carousel-slider",
           "settings": {
-            "image": "shopify:\/\/shop_images\/aisvri-iyHY_njb6Jg-unsplash.jpg"
+            "image": "shopify:\/\/shop_images\/aisvri-iyHY_njb6Jg-unsplash.jpg",
+            "alt_text": "image for slide"
           }
         },
         "21b3ff02-2820-413e-b398-4fa66778c60a": {
           "type": "carousel-slider",
           "settings": {
-            "image": "shopify:\/\/shop_images\/aisvri-Wq1vVLE6xMs-unsplash.jpg"
+            "image": "shopify:\/\/shop_images\/aisvri-Wq1vVLE6xMs-unsplash.jpg",
+            "alt_text": "image for slide"
           }
         }
       },
@@ -153,6 +157,8 @@
         "21b3ff02-2820-413e-b398-4fa66778c60a"
       ],
       "settings": {
+        "border_color": "#fff",
+        "background_color": "#fff"
       }
     }
   },
