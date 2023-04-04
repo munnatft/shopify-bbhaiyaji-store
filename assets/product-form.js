@@ -50,7 +50,6 @@ if (!customElements.get('product-form')) {
             window.location = window.routes.cart_url;
             return;
           }
-
           if (!this.error) publish(PUB_SUB_EVENTS.cartUpdate, {source: 'product-form'});
           this.error = false;
           const quickAddModal = this.closest('quick-add-modal');

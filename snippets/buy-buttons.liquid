@@ -12,7 +12,7 @@
 {% endcomment %}
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
-    <product-form class="product-form">
+    <div class="product-form">
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <svg
           aria-hidden="true"
@@ -85,7 +85,7 @@
           {%- endif -%}
         </div>
       {%- endform -%}
-    </product-form>
+    </div>
   {%- else -%}
     <div class="product-form">
       <div class="product-form__buttons form">
@@ -131,5 +131,6 @@
     </pickup-availability>
 
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'addToCart.js' | asset_url   }}" defer="defer" ></script>
   {%- endif -%}
 </div>
