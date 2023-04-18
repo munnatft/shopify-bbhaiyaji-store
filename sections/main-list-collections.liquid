@@ -1,7 +1,13 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width">
+<style>
+  .page-mb {
+    margin-bottom: 2.5rem;
+  }
+</style>
+
+<div class="page-width page-mb">
   <h1 class="title title--primary">{{ section.settings.title | escape }}</h1>
   {%- liquid
     case section.settings.sort
@@ -15,11 +21,7 @@
       assign collections = collections | reverse
     endif
 
-    assign moduloResult = 28 | modulo: section.settings.columns_desktop
-    assign paginate_by = 30
-    if moduloResult == 0
-      assign paginate_by = 28
-    endif
+    assign paginate_by = 10
   -%}
   {%- paginate collections by paginate_by -%}
     <ul class="collection-list grid-collection-list mb" role="list">
