@@ -41,12 +41,16 @@
 </div>
 <script src="{{'carousel.js' | asset_url}}" defer />
 
+
 {% schema %}
   {
     "name": "Carousel Slider",
     "tag": "section",
     "class": "carousel-section",
     "max_blocks": 9,
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
     "settings": [
       {
         "type": "color",

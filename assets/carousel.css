@@ -31,8 +31,7 @@
     right: 3%;
   }
   .carousel__track__container {
-    /* background-color: lightgreen; */
-    position: relative;
+    width: 100%;
     height: 100%;
     overflow: hidden;
   }
@@ -40,15 +39,12 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    position: relative;
-    height: 100%;
+    display: flex;
     transition: transform 250ms ease-in;
+    height: 100%;
   }
   .carousel__slide {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+    flex: 0 0 100%;
   }
   .carousel_image {
     width: 100%;

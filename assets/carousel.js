@@ -1,89 +1,61 @@
-console.log("carousel-js")
-
-const carouselTrack = document.querySelector('#carousel-track')
-const slides = Array.from(carouselTrack.children)
-
-const prevBtn = document.querySelector('#previous-button')
-const nextBtn = document.querySelector('#next-button')
-
-const carouselDots = document.querySelector('#carousel-dots')
-const dots = Array.from(carouselDots.children)
-
-// get the width of slide
-const slideWidth = slides[0].getBoundingClientRect().width
-
-
-// arranging slides next to one another
-slides.forEach((slide,index) => {
-    slide.style.left = `${slideWidth*index}px`
+$(document).ready(function() {
+    const totalListLength = $(".carousel__slide").length
+    $("#previous-button").on("click",function(){
+        const listItem = $("#carousel-track .current-slide")
+        const currentIndex = $(".carousel__slide").index(listItem)
+        const currentDot = $("#carousel-dots .current-slide")
+        showOrHideBtn(currentIndex-1,totalListLength)
+        if(currentIndex > 0) {
+            $("#carousel-track").css("transform", `translateX(-${(currentIndex-1)*100}%)`)
+            updateListElement(listItem,listItem.prev())
+            updateDotNavigator(currentDot, currentDot.prev())
+        }
+    })
+    $("#next-button").on("click",function(){
+        const listItem = $("#carousel-track .current-slide")
+        const currentIndex = $(".carousel__slide").index(listItem)
+        const currentDot = $("#carousel-dots .current-slide")
+        showOrHideBtn(currentIndex+1,totalListLength)
+        if(currentIndex < totalListLength-1) {
+            $("#carousel-track").css("transform", `translateX(-${(currentIndex+1)*100}%)`)
+            updateListElement(listItem,listItem.next())
+            updateDotNavigator(currentDot, currentDot.next())
+        }
+    })
+    $("#carousel-dots").on("click",function(e) {
+        const targetDotElement = $(e.target)
+        const activeDotElement = $("#carousel-dots .current-slide")
+        const targetDotIndex = $(".dot__navigator").index(e.target)
+        const currentlistElement = $("#carousel-track .current-slide")
+        const targetListElement = $(".carousel__slide").eq(targetDotIndex)
+        $("#carousel-track").css("transform", `translateX(-${(targetDotIndex)*100}%)`)
+        updateListElement(currentlistElement,targetListElement)
+        updateDotNavigator(activeDotElement,targetDotElement)
+        showOrHideBtn(targetDotIndex,totalListLength)
+    })
 })
 
-const moveToSlide = (currentSlide,targetSlide) => {
-    const amountToMove = targetSlide.style.left;
-
-    carouselTrack.style.transform = 'translateX(-'+amountToMove+')'
-
-    currentSlide.classList.remove("current-slide")
-    targetSlide.classList.add("current-slide")
-}
-
-const updateDotsNavigator = (currentDot,targetDot) => {
-    currentDot.classList.remove("current-slide")
-    targetDot.classList.add("current-slide")
-}
-
-const showOrHideArrowButton = (targetIndex) => {
+const showOrHideBtn = (targetIndex, totalListLength) => {
     if(targetIndex === 0) {
-        prevBtn.classList.add("is-hidden")
-        nextBtn.classList.remove("is-hidden")
-    } else if(targetIndex === slides.length -1) {
-        prevBtn.classList.remove("is-hidden")
-        nextBtn.classList.add("is-hidden")
-    } else {
-        prevBtn.classList.remove("is-hidden")
-        nextBtn.classList.remove("is-hidden")
-    }
-}
-
-// when I click the next button, move slide to the right
-nextBtn.addEventListener('click',() => {
-    const currentSlide = carouselTrack.querySelector('.current-slide')
-    const nextSlide = currentSlide.nextElementSibling;
-    const currentDot = carouselDots.querySelector(".current-slide")
-    const nextDot = currentDot.nextElementSibling
-
-    const nextSlideIndex = slides.findIndex(slide => slide === nextSlide)
-
-    moveToSlide(currentSlide,nextSlide)
-    updateDotsNavigator(currentDot,nextDot)
-    showOrHideArrowButton(nextSlideIndex)
-})
-
-// when I click the previous button, move slide to the left
-prevBtn.addEventListener('click',() => {
-    const currentSlide = carouselTrack.querySelector('.current-slide')
-    const prevSlide = currentSlide.previousElementSibling;
-    const currentDot = carouselDots.querySelector(".current-slide")
-    const nextDot = currentDot.previousElementSibling
-
-    const prevSlideIndex = slides.findIndex(slide => slide === prevSlide)
-
-    moveToSlide(currentSlide,prevSlide)
-    updateDotsNavigator(currentDot,nextDot)
-    showOrHideArrowButton(prevSlideIndex)
-})
-
-// click on the dots navigator
-carouselDots.addEventListener('click',(e) => {
-    const targetDot = e.target.closest('button')
-    if(!targetDot) {
+        $("#previous-button").addClass("is-hidden")
+        $("#next-button").removeClass("is-hidden")
         return;
     }
-    const currentSlide = carouselTrack.querySelector('.current-slide')
-    const currentDot = carouselDots.querySelector(".current-slide")
-    const targetDotIndex = dots.findIndex(dot => dot === targetDot)
-    const targetSlide = slides[targetDotIndex]
-    moveToSlide(currentSlide,targetSlide)
-    updateDotsNavigator(currentDot,targetDot)
-    showOrHideArrowButton(targetDotIndex)
-})
+    if(targetIndex === totalListLength-1) {
+        $("#previous-button").removeClass("is-hidden")
+        $("#next-button").addClass("is-hidden")
+        return;
+    }
+    $("#previous-button").removeClass("is-hidden")
+    $("#next-button").removeClass("is-hidden")
+}
+
+const updateListElement = (currentListElement, targetListElement) => {
+    currentListElement.removeClass("current-slide")
+    targetListElement.addClass("current-slide")
+}
+
+const updateDotNavigator = (currentDotElement, targetDotElement) => {
+    currentDotElement.removeClass("current-slide")
+    targetDotElement.addClass("current-slide")
+}
