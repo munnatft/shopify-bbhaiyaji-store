@@ -118,47 +118,38 @@
         "padding_bottom": 68
       }
     },
-    "5f969c4c-5c7e-4969-b296-8306e1c43bb0": {
-      "type": "carousel-slider",
+    "dd8dc344-8add-48c1-91e4-09a28030ef23": {
+      "type": "newsletter",
       "blocks": {
-        "23b2b393-32f9-4260-b0fd-a95000e2db32": {
-          "type": "carousel-slider",
+        "template--18361867764016__dd8dc344-8add-48c1-91e4-09a28030ef23-16832696133a9970f4-0": {
+          "type": "heading",
           "settings": {
-            "image": "shopify:\/\/shop_images\/aisvri-BARfQGE_QcU-unsplash.jpg",
-            "alt_text": "first slide"
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
           }
         },
-        "203a761c-4d1d-43ea-8328-db73938be5e5": {
-          "type": "carousel-slider",
+        "template--18361867764016__dd8dc344-8add-48c1-91e4-09a28030ef23-16832696133a9970f4-1": {
+          "type": "paragraph",
           "settings": {
-            "image": "shopify:\/\/shop_images\/marek-piwnicki-oFu9stx-M9I-unsplash.jpg",
-            "alt_text": "image for slide"
+            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
           }
         },
-        "b123c413-25a7-4a66-9cd4-e55c47edc704": {
-          "type": "carousel-slider",
+        "template--18361867764016__dd8dc344-8add-48c1-91e4-09a28030ef23-16832696133a9970f4-2": {
+          "type": "email_form",
           "settings": {
-            "image": "shopify:\/\/shop_images\/aisvri-iyHY_njb6Jg-unsplash.jpg",
-            "alt_text": "image for slide"
-          }
-        },
-        "21b3ff02-2820-413e-b398-4fa66778c60a": {
-          "type": "carousel-slider",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/aisvri-Wq1vVLE6xMs-unsplash.jpg",
-            "alt_text": "image for slide"
           }
         }
       },
       "block_order": [
-        "23b2b393-32f9-4260-b0fd-a95000e2db32",
-        "203a761c-4d1d-43ea-8328-db73938be5e5",
-        "b123c413-25a7-4a66-9cd4-e55c47edc704",
-        "21b3ff02-2820-413e-b398-4fa66778c60a"
+        "template--18361867764016__dd8dc344-8add-48c1-91e4-09a28030ef23-16832696133a9970f4-0",
+        "template--18361867764016__dd8dc344-8add-48c1-91e4-09a28030ef23-16832696133a9970f4-1",
+        "template--18361867764016__dd8dc344-8add-48c1-91e4-09a28030ef23-16832696133a9970f4-2"
       ],
       "settings": {
-        "border_color": "#ffffff",
-        "background_color": "#ffffff"
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
@@ -166,6 +157,6 @@
     "rich_text",
     "212dcf6f-fbd1-4132-8d75-3d80a6089208",
     "featured-collection",
-    "5f969c4c-5c7e-4969-b296-8306e1c43bb0"
+    "dd8dc344-8add-48c1-91e4-09a28030ef23"
   ]
 }

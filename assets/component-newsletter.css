@@ -25,6 +25,9 @@
 
 .newsletter-form__field-wrapper .field {
   z-index: 0;
+  border: 1px solid #414141;
+  border-radius: 10px;
+  padding: 10px 15px;
 }
 
 .newsletter-form__message {
@@ -45,7 +48,7 @@
 .newsletter-form__button {
   width: 4.4rem;
   margin: 0;
-  right: var(--inputs-border-width);
+  right: 0;
   top: 0;
   height: 100%;
   z-index: 2;
