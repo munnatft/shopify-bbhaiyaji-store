@@ -5,3 +5,5 @@ const PUB_SUB_EVENTS = {
   quantityUpdate: 'quantity-update',
   variantChange: 'variant-change'
 };
+
+const master = "MASTER";
